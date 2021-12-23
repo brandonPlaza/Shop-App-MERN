@@ -6,8 +6,10 @@ var logger = require('morgan');
 var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var api = require("./routes/api");
+var api = require("./ts/api");
 var app = express();
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +25,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', api);
+
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri);
+
+const connection = mongoose.connection;
+connection.once('open',()=>{
+  console.log("MongoDB is connected");
+});
+
+const itemsRouter = require('./ts/models/item.model');
+const usersRouter = require('./ts/models/user.model');
+
+app.use('/items', itemsRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
