@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//var usersRouter = require('./ts/routes/users');
 var api = require("./ts/api");
 var app = express();
 const mongoose = require('mongoose');
@@ -23,7 +23,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/api', api);
 
 const uri = process.env.ATLAS_URI;
@@ -34,10 +33,11 @@ connection.once('open',()=>{
   console.log("MongoDB is connected");
 });
 
-const itemsRouter = require('./ts/models/item.model');
-const usersRouter = require('./ts/models/user.model');
+const itemsRouter = require('./ts/routes/items');
+const usersRouter = require('./ts/routes/users');
 
 app.use('/items', itemsRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
