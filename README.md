@@ -33,3 +33,6 @@ npm start
 cd ../learn-react
 npm start
 ```
+```js
+import '@github/clipboard-copy-element'
+```
