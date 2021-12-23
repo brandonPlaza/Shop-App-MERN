@@ -26,6 +26,7 @@ Welcome to Shop App MERN!
 <p>
   Therefore you need to clone this repository and run npm start in both the "api" and "learn-react" folders
 </p>
+<!--
 ```
 git clone https://github.com/brandonPlaza/Shop-App-MERN.git
 cd Shop-App-MERN/api
@@ -33,6 +34,4 @@ npm start
 cd ../learn-react
 npm start
 ```
-```js
-import '@github/clipboard-copy-element'
-```
+-->
