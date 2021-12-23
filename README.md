@@ -1,6 +1,11 @@
 <h1>
-Welcome to my experimental application using the MERN stack
+Welcome to my Shop App MERN!
 </h1>
+
+<p>
+  Shop App MERN was created for me to learn the basics of the MERN stack aswell as how to integrate other technologies
+  like TypeScript into a project.
+</p>
 
 <h4>
   MERN Stands for:
