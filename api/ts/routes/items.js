@@ -20,3 +20,4 @@ router.route('/add').post((req, res) => {
         .then(() => res.json('The item has been added!'))
         .catch((error) => res.status(400).json('Error ' + error));
 });
+module.exports = router;

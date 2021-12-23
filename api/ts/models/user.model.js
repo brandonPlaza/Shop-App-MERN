@@ -8,6 +8,7 @@ const userShema = new mongoose_1.default.Schema({
     userName: { type: String, required: true, unique: true, trim: true, minlength: 3 },
     email: { type: String, required: true, unique: true, trim: true, minlength: 3 },
     password: { type: String, required: true, unique: true, trim: true, minlength: 3 },
+    token: { type: String },
 }, {
     timestamps: true,
 });
