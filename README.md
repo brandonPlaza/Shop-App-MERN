@@ -17,7 +17,7 @@ Welcome to Shop App MERN!
   <li>Node(.js) - the premier JavaScript web server</li>
 </ul>
 <a href="https://www.mongodb.com/mern-stack">Learn more about MERN here</a>
-<span>Coincidentally(not really) all of these technologies are used in this project!</span>
+<p>Coincidentally(not really) all of these technologies are used in this project!</p>
 
 
 <h4>
