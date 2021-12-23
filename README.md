@@ -1,5 +1,5 @@
 <h1>
-Welcome to my Shop App MERN!
+Welcome to Shop App MERN!
 </h1>
 
 <p>
