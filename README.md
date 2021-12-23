@@ -26,3 +26,6 @@ Welcome to Shop App MERN!
 <p>
   Therefore you need to clone this repository and run npm start in both the "api" and "learn-react" folders
 </p>
+<div class="snippet-clipboard-content position-relative overflow-auto">
+  test
+</div>
