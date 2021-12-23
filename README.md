@@ -1,3 +1,4 @@
+import '@github/clipboard-copy-element'
 <h1>
 Welcome to Shop App MERN!
 </h1>
