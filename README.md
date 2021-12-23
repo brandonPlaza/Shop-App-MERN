@@ -3,7 +3,7 @@ Welcome to Shop App MERN!
 </h1>
 
 <p>
-  Shop App MERN was created for to explore and learn the basics of the MERN stack aswell as how to integrate other technologies
+  Shop App MERN was created to explore and learn the basics of the MERN stack aswell as how to integrate other technologies
   like TypeScript into a project.
 </p>
 
