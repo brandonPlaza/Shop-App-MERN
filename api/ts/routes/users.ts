@@ -9,8 +9,10 @@ router.route('/').get((req,res)=>{
     .catch((err: string) => res.status(400).json('Error ' + err))
 });
 
-router.route('/add').post((req,res)=>{
+router.route('/register').post((req,res)=>{
   const userName = req.body.userName;
+  const email = req.body.email;
+  const password = req.body.password;
   const newUser = new User({userName});
 
   newUser.save()

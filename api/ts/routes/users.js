@@ -11,7 +11,7 @@ router.route('/').get((req, res) => {
         .then((users) => res.json(users))
         .catch((err) => res.status(400).json('Error ' + err));
 });
-router.route('/add').post((req, res) => {
+router.route('/register').post((req, res) => {
     const userName = req.body.userName;
     const newUser = new User({ userName });
     newUser.save()
