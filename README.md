@@ -1,4 +1,3 @@
-import '@github/clipboard-copy-element'
 <h1>
 Welcome to Shop App MERN!
 </h1>
@@ -27,6 +26,10 @@ Welcome to Shop App MERN!
 <p>
   Therefore you need to clone this repository and run npm start in both the "api" and "learn-react" folders
 </p>
-<div class="snippet-clipboard-content position-relative overflow-auto">
-  test
-</div>
+```
+git clone https://github.com/brandonPlaza/Shop-App-MERN.git
+cd Shop-App-MERN/api
+npm start
+cd ../learn-react
+npm start
+```
