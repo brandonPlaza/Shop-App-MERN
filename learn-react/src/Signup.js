@@ -48,76 +48,53 @@ class Signup extends React.Component{
                     </div>
                 </div>
 
-                {/* Form */}
-                {/* <div className="w-full h-full flex justify-center">
-                    <div className="w-4/12 h-full objec">
-                        <form onSubmit={this.submitInfo} className="shadow-md rounded px-8 pt-6 pb-8 mb-4">
-
-                            <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">
-                                    Username: 
-                                    <input id="username" type="text" value={this.state.name} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
-                                </label>
-                            </div>
-
-                            <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">
-                                    Email: 
-                                    <input id="email" className="shadow" type="email" value={this.state.email} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
-                                </label>
-                            </div>
-
-                            <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">
-                                    Password: 
-                                    <input id="password" type="password" value={this.state.password} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
-                                </label>
-                            </div>
-                            <div className="flex items-center justify-between">
-                                <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Submit"/>
-
-                                <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-                                    Forgot Password?
-                                </a>
-                            </div>
-                        </form>
-                    </div>
-                </div> */}
-
-                {/* Form */}
+                {/* Main Section */}
                 <div className="w-full relative center">
                     <div className="w-full h-full absolute top-0 left-0 grid grid-cols-6">
-                    <div className="col-start-2 col-span-2 bg-white bg-opacity-90 py-1 px-3">
-                        <form onSubmit={this.submitInfo} className="shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                            <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">
-                                    Username: 
-                                    <input id="username" type="text" value={this.state.name} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
-                                </label>
-                            </div>
+                        {/* Form */}
+                        <div className="col-start-2 col-span-2 bg-white bg-opacity-90 py-1 px-3">
+                            <form onSubmit={this.submitInfo} className="shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                                        Username: 
+                                        <input id="username" type="text" value={this.state.name} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
+                                    </label>
+                                </div>
 
-                            <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">
-                                    Email: 
-                                    <input id="email" className="shadow" type="email" value={this.state.email} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
-                                </label>
-                            </div>
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                                        Email: 
+                                        <input id="email" className="shadow" type="email" value={this.state.email} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
+                                    </label>
+                                </div>
 
-                            <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">
-                                    Password: 
-                                    <input id="password" type="password" value={this.state.password} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
-                                </label>
-                            </div>
-                            <div className="flex items-center justify-between">
-                                <input className="bg-primary hover:bg-highlight text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Submit"/>
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                                        Password: 
+                                        <input id="password" type="password" value={this.state.password} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
+                                    </label>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                    <input className="bg-primary hover:bg-highlight text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Submit"/>
 
-                                <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-                                    Forgot Password?
-                                </a>
+                                    <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                                        Forgot Password?
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+
+                        {/* Message */}
+                        <div className="col-start-4 col-span-2 bg-white bg-opacity-90 py-1 px-3">
+                            <h2 className="text-secondary font-bold text-2xl mb-2">Our pledge to data privacy:</h2>
+                            <div className="text-highlight text-xl">
+                                We will never sell any personal information input into your account. Additionally all of your information is stored according to
+                                the latest cybersecurity standards.
                             </div>
-                        </form>
-                    </div>
+                            <div className="text-highlight text-xl pt-4">
+                                So you can shop and sell <span className="underline font-bold">free of worry!</span>
+                            </div>
+                        </div>
                     </div>
                     <img src={background} alt="Background" className="object-cover w-full"/>
                 </div>
@@ -128,16 +105,16 @@ class Signup extends React.Component{
                         <span className="text-primary">Connect with us:</span>
                         <ul>
                             <li>
-                            <a href="#" className="font-mono font-semibold text-tertiary">Twitter</a>
+                                <a href="#" className="font-mono font-semibold text-tertiary">Twitter</a>
                             </li>
                             <li>
-                            <a href="#" className="font-mono font-semibold text-tertiary">Facebook</a>
+                                <a href="#" className="font-mono font-semibold text-tertiary">Facebook</a>
                             </li>
                             <li>
-                            <a href="#" className="font-mono font-semibold text-tertiary">Instagram</a>
+                                <a href="#" className="font-mono font-semibold text-tertiary">Instagram</a>
                             </li>
                             <li>
-                            <a href="#" className="font-mono font-semibold text-tertiary">Reddit</a>
+                                <a href="#" className="font-mono font-semibold text-tertiary">Reddit</a>
                             </li>
                         </ul>
                     </div>
