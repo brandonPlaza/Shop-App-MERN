@@ -52,6 +52,33 @@ router.route('/register').post(async (req,res)=>{
   }catch(error){
     console.log(error);
   }
-})
+});
+
+router.route('/login').post(async (req,res)=>{
+  try {
+    const { email, password } = req.body;
+
+    if (!(email && password)) {
+      res.status(400).send("You are missing required fields");
+    }
+
+    const user = await User.findOne({ email });
+
+    if (user && (await bcrypt.compare(password, user.password))) {
+      const token = jwt.sign(
+        { user_id: user._id, email },
+        process.env.TOKEN_KEY,
+        {
+          expiresIn: "2h",
+        }
+      );
+      user.token = token;
+      res.status(200).json(user);
+    }
+    res.status(400).send("Invalid Credentials");
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 module.exports = router;
