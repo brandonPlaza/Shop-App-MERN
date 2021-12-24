@@ -26,6 +26,7 @@ class App extends React.Component{
 render() {
     return (
         <div>
+          {/* Navbar */}
           <div className="bg-highlight shadow-md">
             <div className="max-w-6xl mx-auto">
                 <div className="flex justify-between">
@@ -36,20 +37,17 @@ render() {
                   </div>
 
                   <div className="hidden md:flex items-center space-x-1">
-                      <a href="#" className="py-4 px-2 text-tertiary border-b-4 border-primary font-medium">
-                          Browse
-                      </a>
                       <nav>
-                        <Link to="login">Login</Link>
+                        <Link className="py-4 px-2 text-tertiary border-b-4 border-primary font-medium m-2" to="browse">Browse</Link>
+                        <Link className="py-4 px-2 text-tertiary border-b-4 border-primary font-medium m-2" to="login">Login</Link>
+                        <Link className="py-4 px-2 text-tertiary border-b-4 border-primary font-medium m-2" to="signup">Signup</Link>
                       </nav>
-                      <a href="#" className="py-4 px-2 text-tertiary border-b-4 border-primary font-medium">
-                          Signup
-                      </a>
                   </div>
                 </div>
             </div>
           </div>
 
+          {/* Hero Section */}
           <div className="w-full relative center">
             <div className="w-full h-full absolute top-0 left-0 grid grid-cols-7">
               <div className="col-span-4"></div>
@@ -71,6 +69,7 @@ render() {
             <img src={background} alt="Background" className="object-cover w-full"/>
           </div>
 
+          {/* Footer */}
           <div className="flex bg-highlight h-full">
               <div className="p-3">
                 <span className="text-primary">Connect with us:</span>
