@@ -53,6 +53,9 @@ class Signup extends React.Component{
                     <div className="w-full h-full absolute top-0 left-0 grid grid-cols-6">
                         {/* Form */}
                         <div className="col-start-2 col-span-2 bg-white bg-opacity-90 py-1 px-3">
+                            <div className="font-bold text-3xl mb-7 text-primary">
+                                Signup:
+                            </div>
                             <form onSubmit={this.submitInfo} className="shadow-md rounded px-8 pt-6 pb-8 mb-4">
                                 <div className="mb-4">
                                     <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -75,11 +78,7 @@ class Signup extends React.Component{
                                     </label>
                                 </div>
                                 <div className="flex items-center justify-between">
-                                    <input className="bg-primary hover:bg-highlight text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Submit"/>
-
-                                    <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-                                        Forgot Password?
-                                    </a>
+                                    <input className="bg-primary hover:bg-highlight text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Signup"/>
                                 </div>
                             </form>
                         </div>
