@@ -21,9 +21,12 @@ router.route('/register').post(async (req,res)=>{
   //   .then(() => res.json('The user has been added!'))
   //   .catch((err: string) => res.status(400).json('Error ' + err))
   try{
+    console.log("Before assignment")
     const {userName, email, password} = req.body;
+    console.log("After assignment")
 
     if(!(userName && password && userName)){
+      console.log("Input Invalid")
       res.status(400).send("One or more input fields are not given");
     }
 
@@ -48,7 +51,7 @@ router.route('/register').post(async (req,res)=>{
       }
     );
     user.token = token;
-    return res.status(200).json(user);
+    return res.status(200).json(user.token);
   }catch(error){
     console.log(error);
   }

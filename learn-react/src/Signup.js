@@ -2,6 +2,8 @@ import React from "react";
 import background from './images/loginBackground.jpeg'
 import {BrowserRouter as Router, Route, Link, NavLink, Routes} from 'react-router-dom';
 
+
+
 class Signup extends React.Component{
     constructor(props){
         super(props)
@@ -11,7 +13,6 @@ class Signup extends React.Component{
             email:"",
             password:"",
         };
-
         this.inputChange = this.inputChange.bind(this);
         this.submitInfo = this.submitInfo.bind(this);
     }
@@ -19,7 +20,7 @@ class Signup extends React.Component{
     inputChange(event){
         if(event.target.id === "username"){
             this.setState({name:event.target.value})
-        }
+        } 
         else if(event.target.id === "email"){
             this.setState({email:event.target.value})
         }
@@ -29,7 +30,22 @@ class Signup extends React.Component{
     }
 
     submitInfo(event){
-        alert(`${this.state.name} ${this.state.email} ${this.state.password}`)
+        // {
+        //     "userName":"Bob",
+        //     "email":"bob@gmail.com",
+        //     "password":"BobsPassword123"
+        // }
+        fetch(`http://localhost:5000/users/register`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify({"userName":this.state.name, "email":this.state.email, "password":this.state.password})
+        })
+            .then(response => localStorage.setItem("x-access-token", response))
+            .catch(err => console.error(err));
+
+        window.location.href = "/browse"
     }
     
     render(){
