@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {BrowserRouter as Router, Route, Link, NavLink, Routes} from 'react-router-dom';
 
 class Browse extends React.Component{
     constructor(props){
@@ -17,6 +18,12 @@ class Browse extends React.Component{
                                 <a href="/" className="flex items-center py-4">
                                     <span className="font-bold font-mono text-primary text-3xl">Shoplux</span>
                                 </a>
+                            </div>
+
+                            <div className="hidden md:flex items-center space-x-1">
+                                <nav>
+                                    <Link className="py-4 px-2 text-tertiary border-b-4 border-primary font-medium m-2" to="account">Account</Link>
+                                </nav>
                             </div>
                         </div>
                     </div>

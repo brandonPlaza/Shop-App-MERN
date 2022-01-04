@@ -1,10 +1,27 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Link, NavLink, Routes} from 'react-router-dom';
 
 
 class Account extends React.Component{
     constructor(props){
         super(props)
+    }
+
+    settingsDisplay(props){
+        let option = props.option
+        if(option == ""){
+            return(
+                <div>
+                    default
+                </div>
+            )
+        }
+        else if(option === "profile"){
+            return(
+                <div>
+                    profile
+                </div>
+            )
+        }
     }
 
     render(){
@@ -81,7 +98,7 @@ class Account extends React.Component{
 
                     {/* Main Content */}
                     <div className="h-full w-full col-span-4">
-                        
+                        <this.settingsDisplay option=""/>
                     </div>
                 </div>
             </div>
