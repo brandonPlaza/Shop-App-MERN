@@ -1,5 +1,5 @@
 import React from "react";
-import background from './images/loginBackground.jpeg'
+import background from '../images/loginBackground.jpeg'
 
 class Login extends React.Component{
 

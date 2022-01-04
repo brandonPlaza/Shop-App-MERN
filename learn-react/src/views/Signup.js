@@ -1,5 +1,5 @@
 import React from "react";
-import background from './images/loginBackground.jpeg'
+import background from '../images/loginBackground.jpeg'
 import {BrowserRouter as Router, Route, Link, NavLink, Routes} from 'react-router-dom';
 
 
@@ -41,7 +41,7 @@ class Signup extends React.Component{
           .then(response => response.json())
           .then(data => {
             localStorage.setItem("token", data.token);
-            window.location.href = "/browse";
+            window.location.href = "/account";
           })
           .catch(err => console.error(err));
       }

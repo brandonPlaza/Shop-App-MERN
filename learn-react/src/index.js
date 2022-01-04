@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Login from './Login';
-import Signup from './Signup'
-import Browse from './Browse';
+import Login from './views/Login';
+import Signup from './views/Signup'
+import Browse from './views/Browse';
+import Account from './views/Account'
 
 
 ReactDOM.render(
@@ -16,6 +17,7 @@ ReactDOM.render(
       <Route path="login" element={<Login />}/>
       <Route path="signup" element={<Signup />}/>
       <Route path="browse" element={<Browse />}/>
+      <Route path="account" element={<Account />}/>
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

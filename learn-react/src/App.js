@@ -4,7 +4,7 @@ import background from './images/frontPageImage.jpeg'
 import './App.css';
 
 import {BrowserRouter as Router, Route, Link, NavLink, Routes} from 'react-router-dom';
-import Login from "./Login";
+import Login from "./views/Login";
 
 class App extends React.Component{
   constructor(props){
