@@ -43,7 +43,7 @@ router.route('/register').post(async (req, res) => {
             expiresIn: "2h",
         });
         user.token = token;
-        return res.status(200).json(user.token);
+        return res.status(200).json({ "token": user.token });
     }
     catch (error) {
         console.log(error);
@@ -51,17 +51,23 @@ router.route('/register').post(async (req, res) => {
 });
 router.route('/login').post(async (req, res) => {
     try {
+        console.log("Login initiated");
         const { email, password } = req.body;
+        console.log("Checking if everything was entered...");
         if (!(email && password)) {
             res.status(400).send("You are missing required fields");
+            res.end();
         }
+        console.log("Everything was entered");
+        console.log("Looking for existing user...");
         const user = await User.findOne({ email });
         if (user && (await bcryptjs_1.default.compare(password, user.password))) {
+            console.log("Existing user found and password matches");
             const token = jsonwebtoken_1.default.sign({ user_id: user._id, email }, process.env.TOKEN_KEY, {
                 expiresIn: "2h",
             });
             user.token = token;
-            res.status(200).json(user.token);
+            return res.status(200).json({ "token": user.token });
         }
         res.status(400).send("Invalid Credentials");
     }

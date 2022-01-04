@@ -5,7 +5,39 @@ class Login extends React.Component{
 
   constructor(props){
     super(props);
-    this.state = {apiResponse:""};
+    this.state = {
+        apiResponse: "",
+        email:"",
+        password:"",
+    };
+    this.inputChange = this.inputChange.bind(this);
+    this.submitInfo = this.submitInfo.bind(this);
+  }
+
+  inputChange(event){
+    if(event.target.id === "email"){
+        this.setState({email:event.target.value})
+    }
+    else if(event.target.id === "password"){
+        this.setState({password:event.target.value})
+    }
+}
+
+  submitInfo(event){
+    event.preventDefault();
+    fetch(`http://localhost:5000/users/login`, {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({"email":this.state.email, "password":this.state.password})
+      })
+        .then(response => response.json())
+        .then(data => {
+            localStorage.setItem("token", data.token);
+            window.location.href = "/browse";
+        })
+        .catch(err => console.error(err));
   }
 
   render(){
@@ -35,8 +67,8 @@ class Login extends React.Component{
                             <form onSubmit={this.submitInfo} className="shadow-md rounded px-8 pt-6 pb-8 mb-4">
                                 <div className="mb-4">
                                     <label className="block text-gray-700 text-sm font-bold mb-2">
-                                        Username: 
-                                        <input id="username" type="text" value={this.state.name} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
+                                        Email: 
+                                        <input id="email" type="text" value={this.state.email} onChange={this.inputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
                                     </label>
                                 </div>
                                 <div className="mb-4">

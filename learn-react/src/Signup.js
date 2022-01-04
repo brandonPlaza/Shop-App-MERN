@@ -29,24 +29,22 @@ class Signup extends React.Component{
         }
     }
 
-    submitInfo(event){
-        // {
-        //     "userName":"Bob",
-        //     "email":"bob@gmail.com",
-        //     "password":"BobsPassword123"
-        // }
+    submitInfo(event) {
+        event.preventDefault();
         fetch(`http://localhost:5000/users/register`, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify({"userName":this.state.name, "email":this.state.email, "password":this.state.password})
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify({"userName":this.state.name, "email":this.state.email, "password":this.state.password})
         })
-            .then(response => localStorage.setItem("x-access-token", response))
-            .catch(err => console.error(err));
-
-        window.location.href = "/browse"
-    }
+          .then(response => response.json())
+          .then(data => {
+            localStorage.setItem("token", data.token);
+            window.location.href = "/browse";
+          })
+          .catch(err => console.error(err));
+      }
     
     render(){
         return(
